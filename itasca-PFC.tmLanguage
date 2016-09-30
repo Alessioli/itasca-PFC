@@ -86,7 +86,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>^\s*\b(command|end_command|endcommand|end|exit|if|else if|else|end_if|endif|loop while|loop for|loop foreach|loop|end_loop|endloop)\b</string>
+			<string>^\s*\b(command|end_command|endcommand|continue|end|exit|if|else if|else|end_if|endif|loop while|loop for|loop foreach|loop|end_loop|endloop)\b</string>
 			<key>name</key>
 			<string>keyword.language.p3dat</string>
 		</dict>
@@ -196,7 +196,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>\b(array|ball|ba|comp|contact|file|global|map|mech|measure|table|string|wall)\b\.\b(age|build|close|contactmap|create|damp|delete|disp|end1|end2|extra|facetlist|facet|find|force|gap|gravity|group|list|mass|normal|num|open|persist|porosity|pos_x|pos_y|pos_z|pos|radius|set_damp|size|timestep|velocity|vel|write|x|y|z)\b</string>
+			<string>\b(array|ball|ba|comp|contact|file|global|io|map|mech|measure|table|string|wall)\b\.\b(active|age|build|close|contactmap|create|damp|delete|disp|end1|end2|extra|facetlist|facet|find|force|gap|gravity|group|list|mass|normal|num|open|persist|porosity|pos_x|pos_y|pos_z|pos|radius|out|set_damp|size|timestep|velocity|vel|write|x|y|z)\b</string>
 		</dict>
 		<dict>
 			<key>captures</key>
