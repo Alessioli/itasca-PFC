@@ -62,7 +62,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>^\s*\b(cmat|contact|domain)\b\s+</string>
+			<string>^\s*\b(configure|cmat|contact|domain|load)\b\s+</string>
 			<key>name</key>
 			<string>constant.language.p3dat</string>
 		</dict>
@@ -80,7 +80,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(activate|addattribute|age|aratio|all|auto|axis|ball-ball|ball-facet|base|bin|box|callback|calm|cap|clear|condition|cylinder|damp|default|deformability|dens|density|destroy|displacement|dp_mode|dp_nratio|dp_sratio|emod|end1|end2|extent|extra|fish|fishhalt|fric|groups|group|height|id|kratio|lin_mode|local|mechanical|method|model|mult|name|numbins|onewall|periodic|plane|porosity|prop|property|random|radius|reflect|remove|rr_fric|rrlinear|size|slot|spin|timestep|time|type|unbal|vel|velocity|xspin|xvelocity|xvel|volumefraction|yspin|yvelocity|yvel|zdisp|zspin|zvelocity|zvel)\b\s+</string>
+			<string>\b(activate|addattribute|age|aratio|all|auto|axis|ball-ball|ball-facet|base|bin|box|callback|calm|cap|clear|condition|cylinder|damp|default|deformability|dens|density|destroy|displacement|dp_mode|dp_nratio|dp_sratio|emod|end1|end2|extent|extra|fish|fishhalt|fric|groups|group|height|id|kratio|lin_mode|local|mechanical|method|model|mult|name|numbins|onewall|periodic|plane|plugin|porosity|prop|property|random|radius|reflect|remove|rr_fric|rrlinear|size|slot|spin|timestep|time|type|unbal|vel|velocity|vtol|xspin|xvelocity|xvel|volumefraction|yspin|yvelocity|yvel|zdisp|zspin|zvelocity|zvel)\b\s+</string>
 			<key>name</key>
 			<string>variable.parameter.type.p3dat</string>
 		</dict>
@@ -110,7 +110,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b\s*(mag|max|min|not|or|pi|round|sgn|sin|sqrt|tan|union|urand|vector|xcomp|ycomp|zcomp)\b</string>
+			<string>\b\s*(gauss|mag|max|min|not|or|pi|round|sgn|sin|sqrt|tan|union|random|uniform|vector|xcomp|ycomp|zcomp)\b</string>
 			<key>name</key>
 			<string>storage.type.function.p3dat</string>
 		</dict>
@@ -208,7 +208,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>\b(map|string)\b(\.|\(|\W)</string>
+			<string>\b(map|string|table)\b(\.|\(|\W)</string>
 		</dict>
 		<dict>
 			<key>captures</key>

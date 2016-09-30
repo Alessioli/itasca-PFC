@@ -25,13 +25,13 @@ patterns:
 - match: ^\s*\b(clean|cy|cyc|cycle|list|new|pause|ret|return|set|solve)\b
   name: constant.language.p3dat
 - match: ^\s*\b()\b\s+((?!\{).*$\n?)
-- match: ^\s*\b(cmat|contact|domain)\b\s+
+- match: ^\s*\b(configure|cmat|contact|domain|load)\b\s+
   name: constant.language.p3dat
 - match: \b(range|calm)\b\s+
   name: constant.language.p3dat
 - match: ^\s*\b(ball|brick|history|measure|mea|wall)\b\s+(\b(add|assemble|attribute|create|delete|distribute|export|extra|fix|free|generate|group|history|import|initialize|list|make|prop|property|result|tolerance|tol|trace)\b\s+)*
   name: constant.language.p3dat
-- match: \b(activate|addattribute|age|aratio|all|auto|axis|ball-ball|ball-facet|base|bin|box|callback|calm|cap|clear|condition|cylinder|damp|default|deformability|dens|density|destroy|displacement|dp_mode|dp_nratio|dp_sratio|emod|end1|end2|extent|extra|fish|fishhalt|fric|groups|group|height|id|kratio|lin_mode|local|mechanical|method|model|mult|name|numbins|onewall|periodic|plane|porosity|prop|property|random|radius|reflect|remove|rr_fric|rrlinear|size|slot|spin|timestep|time|type|unbal|vel|velocity|xspin|xvelocity|xvel|volumefraction|yspin|yvelocity|yvel|zdisp|zspin|zvelocity|zvel)\b\s+
+- match: \b(activate|addattribute|age|aratio|all|auto|axis|ball-ball|ball-facet|base|bin|box|callback|calm|cap|clear|condition|cylinder|damp|default|deformability|dens|density|destroy|displacement|dp_mode|dp_nratio|dp_sratio|emod|end1|end2|extent|extra|fish|fishhalt|fric|groups|group|height|id|kratio|lin_mode|local|mechanical|method|model|mult|name|numbins|onewall|periodic|plane|plugin|porosity|prop|property|random|radius|reflect|remove|rr_fric|rrlinear|size|slot|spin|timestep|time|type|unbal|vel|velocity|vtol|xspin|xvelocity|xvel|volumefraction|yspin|yvelocity|yvel|zdisp|zspin|zvelocity|zvel)\b\s+
   name: variable.parameter.type.p3dat
 - match: ^\s*\b(command|end_command|endcommand|end|exit|if|else if|else|end_if|endif|loop while|loop for|loop foreach|loop|end_loop|endloop)\b
   name: keyword.language.p3dat
@@ -41,7 +41,7 @@ patterns:
   name: keyword.operator.p3dat
 - match: \b\s*(math|abs|acos|and|asin|atan|atan2|cos|degrad|exp|grand|ln|log)\b
   name: storage.type.function.p3dat
-- match: \b\s*(mag|max|min|not|or|pi|round|sgn|sin|sqrt|tan|union|urand|vector|xcomp|ycomp|zcomp)\b
+- match: \b\s*(gauss|mag|max|min|not|or|pi|round|sgn|sin|sqrt|tan|union|random|uniform|vector|xcomp|ycomp|zcomp)\b
   name: storage.type.function.p3dat
 - match: ((;)(?!\{).*$\n?)
   name: comment.language.p3dat
@@ -65,7 +65,7 @@ patterns:
   captures:
     '1': {name: entity.name.function.p3dat}
     '2': {name: entity.name.function.p3dat}
-- match: \b(map|string)\b(\.|\(|\W)
+- match: \b(map|string|table)\b(\.|\(|\W)
   captures:
     '1': {name: entity.name.function.p3dat}
 - match: \.\b(age|create|disp|facetlist|facet|find|gravity|num|porosity|pos|radius|string|timestep|velocity|vel|x|y|z)\b(\.|\(|\W)
