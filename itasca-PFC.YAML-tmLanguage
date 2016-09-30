@@ -31,7 +31,7 @@ patterns:
   name: constant.language.p3dat
 - match: ^\s*\b(ball|brick|history|measure|mea|wall)\b\s+(\b(add|assemble|attribute|create|delete|distribute|export|extra|fix|free|generate|group|history|import|initialize|list|make|prop|property|result|tolerance|tol|trace)\b\s+)*
   name: constant.language.p3dat
-- match: \b(activate|addattribute|age|aratio|all|auto|axis|ball-ball|ball-facet|base|bin|box|callback|calm|cap|clear|condition|cylinder|damp|default|deformability|dens|density|destroy|displacement|dp_mode|dp_nratio|dp_sratio|emod|end1|end2|extent|extra|fish|fishhalt|fric|groups|group|height|id|kratio|lin_mode|local|mechanical|method|model|mult|name|numbins|onewall|periodic|plane|plugin|porosity|prop|property|random|radius|reflect|remove|rr_fric|rrlinear|size|slot|spin|timestep|time|type|unbal|vel|velocity|vtol|xspin|xvelocity|xvel|volumefraction|yspin|yvelocity|yvel|zdisp|zspin|zvelocity|zvel)\b\s+
+- match: \b(activate|addattribute|age|aratio|all|auto|axis|ball-ball|ball-facet|base|bin|box|callback|calm|cap|clear|condition|cylinder|damp|default|deformability|dens|density|destroy|displacement|dp_mode|dp_nratio|dp_sratio|emod|end1|end2|extent|extra|fish|fishhalt|fric|global|groups|group|height|id|kratio|lin_mode|local|mechanical|method|model|mult|name|numbins|onewall|periodic|plane|plugin|porosity|prop|property|random|radius|reflect|remove|rr_fric|rrlinear|size|slot|spin|timestep|time|type|unbal|vel|velocity|vtol|xspin|xvelocity|xvel|volumefraction|yspin|yvelocity|yvel|zdisp|zspin|zvelocity|zvel)\b\s+
   name: variable.parameter.type.p3dat
 - match: ^\s*\b(command|end_command|endcommand|end|exit|if|else if|else|end_if|endif|loop while|loop for|loop foreach|loop|end_loop|endloop)\b
   name: keyword.language.p3dat
@@ -61,14 +61,14 @@ patterns:
     '2': {name: storage.type.function.p3dat}
     '3': {name: variable.parameter.function.p3dat}
 - comment: FISH functions
-- match: \b(array|ball|ba|comp|file|global|map|mech|measure|table|string|wall)\b\.\b(age|build|close|contactmap|create|damp|delete|disp|extra|facetlist|facet|find|gravity|group|list|num|open|porosity|pos_x|pos_y|pos_z|pos|radius|set_damp|size|timestep|velocity|vel|write|x|y|z)\b
+- match: \b(array|ball|ba|comp|contact|file|global|map|mech|measure|table|string|wall)\b\.\b(age|build|close|contactmap|create|damp|delete|disp|end1|end2|extra|facetlist|facet|find|force|gap|gravity|group|list|mass|normal|num|open|persist|porosity|pos_x|pos_y|pos_z|pos|radius|set_damp|size|timestep|velocity|vel|write|x|y|z)\b
   captures:
     '1': {name: entity.name.function.p3dat}
     '2': {name: entity.name.function.p3dat}
-- match: \b(map|string|table)\b(\.|\(|\W)
+- match: \b(int|map|string|table)\b(\.|\(|\W)
   captures:
     '1': {name: entity.name.function.p3dat}
-- match: \.\b(age|create|disp|facetlist|facet|find|gravity|num|porosity|pos|radius|string|timestep|velocity|vel|x|y|z)\b(\.|\(|\W)
+- match: \.\b(age|all|app|create|disp|facetlist|facet|find|gravity|num|porosity|pos|radius|real|string|timestep|velocity|vel|x|y|z)\b(\.|\(|\W)
   captures:
     '1': {name: entity.name.function.p3dat}
 - comment: end of FISH functions

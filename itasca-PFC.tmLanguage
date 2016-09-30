@@ -80,7 +80,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(activate|addattribute|age|aratio|all|auto|axis|ball-ball|ball-facet|base|bin|box|callback|calm|cap|clear|condition|cylinder|damp|default|deformability|dens|density|destroy|displacement|dp_mode|dp_nratio|dp_sratio|emod|end1|end2|extent|extra|fish|fishhalt|fric|groups|group|height|id|kratio|lin_mode|local|mechanical|method|model|mult|name|numbins|onewall|periodic|plane|plugin|porosity|prop|property|random|radius|reflect|remove|rr_fric|rrlinear|size|slot|spin|timestep|time|type|unbal|vel|velocity|vtol|xspin|xvelocity|xvel|volumefraction|yspin|yvelocity|yvel|zdisp|zspin|zvelocity|zvel)\b\s+</string>
+			<string>\b(activate|addattribute|age|aratio|all|auto|axis|ball-ball|ball-facet|base|bin|box|callback|calm|cap|clear|condition|cylinder|damp|default|deformability|dens|density|destroy|displacement|dp_mode|dp_nratio|dp_sratio|emod|end1|end2|extent|extra|fish|fishhalt|fric|global|groups|group|height|id|kratio|lin_mode|local|mechanical|method|model|mult|name|numbins|onewall|periodic|plane|plugin|porosity|prop|property|random|radius|reflect|remove|rr_fric|rrlinear|size|slot|spin|timestep|time|type|unbal|vel|velocity|vtol|xspin|xvelocity|xvel|volumefraction|yspin|yvelocity|yvel|zdisp|zspin|zvelocity|zvel)\b\s+</string>
 			<key>name</key>
 			<string>variable.parameter.type.p3dat</string>
 		</dict>
@@ -196,7 +196,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>\b(array|ball|ba|comp|file|global|map|mech|measure|table|string|wall)\b\.\b(age|build|close|contactmap|create|damp|delete|disp|extra|facetlist|facet|find|gravity|group|list|num|open|porosity|pos_x|pos_y|pos_z|pos|radius|set_damp|size|timestep|velocity|vel|write|x|y|z)\b</string>
+			<string>\b(array|ball|ba|comp|contact|file|global|map|mech|measure|table|string|wall)\b\.\b(age|build|close|contactmap|create|damp|delete|disp|end1|end2|extra|facetlist|facet|find|force|gap|gravity|group|list|mass|normal|num|open|persist|porosity|pos_x|pos_y|pos_z|pos|radius|set_damp|size|timestep|velocity|vel|write|x|y|z)\b</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -208,7 +208,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>\b(map|string|table)\b(\.|\(|\W)</string>
+			<string>\b(int|map|string|table)\b(\.|\(|\W)</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -220,7 +220,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>\.\b(age|create|disp|facetlist|facet|find|gravity|num|porosity|pos|radius|string|timestep|velocity|vel|x|y|z)\b(\.|\(|\W)</string>
+			<string>\.\b(age|all|app|create|disp|facetlist|facet|find|gravity|num|porosity|pos|radius|real|string|timestep|velocity|vel|x|y|z)\b(\.|\(|\W)</string>
 		</dict>
 		<dict>
 			<key>comment</key>
