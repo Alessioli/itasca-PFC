@@ -29,9 +29,9 @@ patterns:
   name: constant.language.p3dat
 - match: \b(range|calm)\b\s+
   name: constant.language.p3dat
-- match: ^\s*\b(ball|brick|configure|cmat|contact|domain|fish|history|measure|mea|wall)\b\s+(\b(add|apply|assemble|attribute|attr|create|delete|distribute|export|extra|fix|free|generate|group|history|import|initialize|list|make|prop|property|result|tolerance|tol|trace)\b\s+)*
+- match: ^\s*\b(ball|brick|configure|cmat|contact|domain|fish|history|measure|mea|wall)\b\s+(\b(add|apply|assemble|attribute|attr|create|default|delete|distribute|export|extra|fix|free|generate|group|history|import|initialize|list|make|prop|property|result|tolerance|tol|trace)\b\s+)*
   name: constant.language.p3dat
-- match: (.*\s+)+\b(activate|addattribute|age|aratio|all|auto|axis|ball-ball|ball-facet|base|bin|box|callback|calm|cap|clear|condition|cylinder|damp|default|deformability|dens|density|destroy|displacement|dp_mode|dp_nratio|dp_sratio|emod|end1|end2|extent|extra|fish|fishhalt|fric|global|groups|group|height|id|kratio|lin_mode|local|mechanical|method|model|mult|name|numbins|onewall|periodic|plane|plugin|porosity|prop|property|random|radius|reflect|remove|rr_fric|rrlinear|size|slot|spin|timestep|time|type|unbal|vel|velocity|vtol|xspin|xvelocity|xvel|volumefraction|yspin|yvelocity|yvel|zdisp|zspin|zvelocity|zvel)\b\s+
+- match: \s+\b(activate|addattribute|age|aratio|all|auto|axis|base|bin|box|callback|calm|cap|clear|condition|cylinder|damp|default|deformability|dens|density|destroy|displacement|dp_mode|dp_nratio|dp_sratio|emod|end1|end2|extent|extra|fish|fishhalt|fric|global|groups|group|height|id|kratio|lin_mode|local|mechanical|method|model|mult|name|numbins|onewall|periodic|plane|plugin|porosity|prop|property|random|radius|reflect|remove|rr_fric|rrlinear|size|slot|spin|timestep|time|type|unbal|vel|velocity|vtol|xspin|xvelocity|xvel|volumefraction|yspin|yvelocity|yvel|zdisp|zspin|zvelocity|zvel)\b\s+
   name: variable.parameter.type.p3dat
 - match: ^\s*\b(command|end_command|endcommand|continue|end|exit|if|else if|else|end_if|endif|loop while|loop for|loop foreach|loop|end_loop|endloop)\b
   name: keyword.language.p3dat

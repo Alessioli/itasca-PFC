@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>fileTypes</key>
@@ -74,13 +74,13 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>^\s*\b(ball|brick|configure|cmat|contact|domain|fish|history|measure|mea|wall)\b\s+(\b(add|apply|assemble|attribute|attr|create|delete|distribute|export|extra|fix|free|generate|group|history|import|initialize|list|make|prop|property|result|tolerance|tol|trace)\b\s+)*</string>
+			<string>^\s*\b(ball|brick|configure|cmat|contact|domain|fish|history|measure|mea|wall)\b\s+(\b(add|apply|assemble|attribute|attr|create|default|delete|distribute|export|extra|fix|free|generate|group|history|import|initialize|list|make|prop|property|result|tolerance|tol|trace)\b\s+)*</string>
 			<key>name</key>
 			<string>constant.language.p3dat</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(.*\s+)+\b(activate|addattribute|age|aratio|all|auto|axis|ball-ball|ball-facet|base|bin|box|callback|calm|cap|clear|condition|cylinder|damp|default|deformability|dens|density|destroy|displacement|dp_mode|dp_nratio|dp_sratio|emod|end1|end2|extent|extra|fish|fishhalt|fric|global|groups|group|height|id|kratio|lin_mode|local|mechanical|method|model|mult|name|numbins|onewall|periodic|plane|plugin|porosity|prop|property|random|radius|reflect|remove|rr_fric|rrlinear|size|slot|spin|timestep|time|type|unbal|vel|velocity|vtol|xspin|xvelocity|xvel|volumefraction|yspin|yvelocity|yvel|zdisp|zspin|zvelocity|zvel)\b\s+</string>
+			<string>\s+\b(activate|addattribute|age|aratio|all|auto|axis|base|bin|box|callback|calm|cap|clear|condition|cylinder|damp|default|deformability|dens|density|destroy|displacement|dp_mode|dp_nratio|dp_sratio|emod|end1|end2|extent|extra|fish|fishhalt|fric|global|groups|group|height|id|kratio|lin_mode|local|mechanical|method|model|mult|name|numbins|onewall|periodic|plane|plugin|porosity|prop|property|random|radius|reflect|remove|rr_fric|rrlinear|size|slot|spin|timestep|time|type|unbal|vel|velocity|vtol|xspin|xvelocity|xvel|volumefraction|yspin|yvelocity|yvel|zdisp|zspin|zvelocity|zvel)\b\s+</string>
 			<key>name</key>
 			<string>variable.parameter.type.p3dat</string>
 		</dict>
