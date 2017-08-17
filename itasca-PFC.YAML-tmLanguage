@@ -47,7 +47,7 @@ patterns:
   name: keyword.language.p3dat
 - match: \s*&\s*$\n?
   name: keyword.language.p3dat
-- match: \s*(=|\*|\+|\^|\-|\/|\#|\,)\s*
+- match: \s*(&|=|\*|\+|\^|\-|\/|\#|\,)\s*
   name: keyword.operator.p3dat
 - match: \b\s*(math|abs|acos|and|asin|atan|atan2|cos|degrad|exp|grand|ln|log)\b
   name: storage.type.function.p3dat
@@ -77,5 +77,5 @@ patterns:
   captures:
     '1': {name: entity.name.function.p3dat}
 - comment: end of FISH functions
-- match: \s+(gravity|grav|null)\s+
-  name: entity.name.function.p3dat
+- match: \s+(gravity|grav|null|true|false|yes|no)\s*
+  name: storage.type.function.p3dat

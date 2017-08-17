@@ -132,7 +132,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\s*(=|\*|\+|\^|\-|\/|\#|\,)\s*</string>
+			<string>\s*(&amp;|=|\*|\+|\^|\-|\/|\#|\,)\s*</string>
 			<key>name</key>
 			<string>keyword.operator.p3dat</string>
 		</dict>
@@ -240,9 +240,9 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\s+(gravity|grav|null)\s+</string>
+			<string>\s+(gravity|grav|null|true|false|yes|no)\s*</string>
 			<key>name</key>
-			<string>entity.name.function.p3dat</string>
+			<string>storage.type.function.p3dat</string>
 		</dict>
 	</array>
 	<key>scopeName</key>
