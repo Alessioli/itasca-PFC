@@ -69,7 +69,7 @@ patterns:
 - match: \b(int|map|memory|string|table)\b(\.|\()+
   captures:
     '1': {name: entity.name.function.p3dat}
-- match: \b(array|ball|ba|comp|contact|file|global|gp|io|map|mech|measure|table|time|string|wall|zone)\b\.\b(active|add|age|build|close|contactmap|create|damp|delete|disp|end1|end2|end2|extra|facetlist|facet|find|fix|force|gap|gravity|group|head|interface|isprop|keys|list|load|mass|model|near|next|normal|num|open|out|persist|porosity|pos_x|pos_y|prop|pos_z|pos|pp|radius|real|remove|out|set_damp|shear|size|strain|stress|timestep|to|unbal|value|velocity|vel|vertex|vertexlist|vol|write|x|y|z)\b
+- match: \b(array|ball|ba|comp|contact|file|global|gp|io|map|mech|measure|memory|table|time|string|wall|zone)\b\.\b(active|add|age|build|close|contactmap|create|damp|delete|disp|end1|end2|end2|extra|facetlist|facet|find|fix|force|gap|gravity|group|head|interface|isprop|keys|list|load|mass|model|near|next|normal|num|open|out|persist|porosity|pos_x|pos_y|prop|pos_z|pos|pp|radius|real|remove|out|set_damp|shear|size|strain|stress|timestep|to|unbal|value|velocity|vel|vertex|vertexlist|vol|write|x|y|z)\b
   captures:
     '1': {name: entity.name.function.p3dat}
     '2': {name: entity.name.function.p3dat}
