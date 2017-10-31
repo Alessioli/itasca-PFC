@@ -4,13 +4,12 @@
 <dict>
 	<key>fileTypes</key>
 	<array>
-		<string>dat</string>
 		<string>p3dat</string>
 		<string>p2dat</string>
 		<string>f3dat</string>
-		<string>fis</string>
 		<string>f3fis</string>
 		<string>p3fis</string>
+		<string>f3prj</string>
 		<string>p3prj</string>
 		<string>p2prj</string>
 	</array>
@@ -29,6 +28,30 @@
 			<string>\b(?i:(\d+e[\-\+]?\d+))</string>
 			<key>name</key>
 			<string>constant.numeric.float.p3dat</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>((\'|\")[a-zA-Z,0-9,_,=,\s,\.,\,,\;,\:,\+,\-,\*,\%,\@,\/,\\,\(,\),\[,\],\{,\}]*(\'|\"))</string>
+			<key>name</key>
+			<string>string.language.p3dat</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\s*(=|\*|\+|\^|\-|\/|\#|\,|\&amp;|\.\.\.|\|)\s*</string>
+			<key>name</key>
+			<string>keyword.operator.p3dat</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>((;)(?!\{).*$\n?)</string>
+			<key>name</key>
+			<string>comment.language.p3dat</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\s*(&lt;|=&lt;|&gt;|&gt;=|#)\s*</string>
+			<key>name</key>
+			<string>keyword.operator.comparison.p3dat</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -56,7 +79,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(define|def|fish define)\s*([\w+_]+)\s*\(?([a-zA-Z0-9,_]*)\)?\s*$\n?</string>
+			<string>(define|def|fish define|fish def)\s*([\w+_]+)\s*\(?([a-zA-Z0-9,_,\s*]*)*\)?\s*$\n?</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -90,7 +113,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>^\s*\b(ball|brick|configure|cmat|contact|domain|fish|fix|geometry|his|history|ini|initial|measure|mea|model|program|structure|table|wall|zone)\b\s+(\b(add|apply|assemble|attribute|attr|cmodel|call|condition|configure|create|creep|cycle|default|delete|distribute|export|extent|extra|face|fix|free|generate|gravity|gridpoint|group|groupbehavior|history|import|initialize|interface|interval|link|list|make|new|pile|prop|property|relax|restore|result|save|solve|title|tolerance|tol|trace)\b\s*)*(\b(and|assign|attach|contact|create|fix|group|or|property|skin)\b\s*)*</string>
+			<string>^\s*\b(ball|brick|configure|cmat|contact|data|domain|fish|fix|geometry|his|history|ini|initial|measure|mea|model|program|structure|table|wall|zone)\b\s+(\b(add|apply|assemble|attribute|attr|cmodel|call|condition|configure|create|creep|cycle|default|delete|distribute|export|extent|extra|face|fix|free|generate|gravity|gridpoint|groupbehavior|history|import|initialize|interface|interval|link|list|make|new|pile|prop|property|relax|restore|result|save|scalar|solve|title|tolerance|tol|trace)\b\s*)*(\b(and|assign|attach|contact|create|fix|group|or|property|skin|value)\b\s*)*</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -123,36 +146,6 @@
 			<string>^\s*\b(command|end_command|endcommand|continue|end|exit section|exit|if|else if|else|end_if|endif|loop while|loop for|loop foreach|loop|end_loop|endloop|section|end_section|endsection|whilestepping)\b</string>
 			<key>name</key>
 			<string>keyword.language.p3dat</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\s*&amp;\s*$\n?</string>
-			<key>name</key>
-			<string>keyword.language.p3dat</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\s*(=|\*|\+|\^|\-|\/|\#|\,|\&amp;|\.\.\.)\s*</string>
-			<key>name</key>
-			<string>keyword.operator.p3dat</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>((;)(?!\{).*$\n?)</string>
-			<key>name</key>
-			<string>comment.language.p3dat</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\s*(&lt;|=&lt;|&gt;|&gt;=|#)\s*</string>
-			<key>name</key>
-			<string>keyword.operator.comparison.p3dat</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>((\'|\")[a-zA-Z,0-9,_,=,\s,\.,\,/,\-,\%,\;,\@,\(,\,+,\[,\])]*(\'|\"))</string>
-			<key>name</key>
-			<string>string.language.p3dat</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -194,9 +187,14 @@
 					<key>name</key>
 					<string>entity.name.function.p3dat</string>
 				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.p3dat</string>
+				</dict>
 			</dict>
 			<key>match</key>
-			<string>\b(math)\b\.\b(abs|acos|and|asin|atan|atan2|cos|degrad|exp|grand|ln|log|dot|gauss|mag|mag2|max|min|not|or|pi|round|sgn|sin|sqrt|tan|union|unit|)\b</string>
+			<string>\b(ball|ba|comp|contact|creep|global|gp|interface|mech|measure|struct|wall|zone)\b\.\b(active|add|age|contactmap|create|damp|delete|disp|end1|end2|end2|extra|facetlist|face|facet|find|fix|force|gap|gravity|group|head|id|interface|isprop|link|list|load|mass|model|near|next|node|normal|num|open|out|persist|pile|porosity|pos_x|pos_y|prop|pos_z|pos|pp|radius|real|remove|out|set_damp|shear|strain|stress|time|timestep|to|type|unbal|upper|velocity|vel|vertex|vertexlist|vol|write|x|y|z)\b(\.|\(|\W)*(\b(area|delete|disp|extra|force|gp|group|head|id|length|link|near|next|penetration|pos|total|update|vel|x|y|z)\b)*</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -211,14 +209,9 @@
 					<key>name</key>
 					<string>entity.name.function.p3dat</string>
 				</dict>
-				<key>4</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.function.p3dat</string>
-				</dict>
 			</dict>
 			<key>match</key>
-			<string>\b(array|ball|ba|comp|contact|creep|file|global|gp|io|map|mech|measure|memory|struct|table|time|string|wall|zone)\b\.\b(active|add|age|build|close|contactmap|create|damp|delete|disp|end1|end2|end2|extra|facetlist|facet|find|fix|force|gap|gravity|group|head|id|interface|isprop|keys|link|list|load|mass|model|near|next|node|normal|num|open|out|persist|pile|porosity|pos_x|pos_y|prop|pos_z|pos|pp|radius|real|remove|out|set_damp|shear|size|strain|stress|timestep|to|type|unbal|value|velocity|vel|vertex|vertexlist|vol|write|x|y|z)\b(\.)*(\b(area|delete|disp|force|head|id|length|link|near|next|pos|update|vel|x|y|z)\b)*</string>
+			<string>\b(array|file|io|map|math|memory|table|time|string)\b\.\b(abs|acos|and|asin|atan|atan2|build|close|cos|create|degrad|delete|dot|exp|gauss|grand|keys|ln|log|mag|mag2|max|min|next|not|open|or|out|pi|real|remove|round|sgn|sin|size|sqrt|sub|tan|time|to|type|union|unit|value|write)\b</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -230,17 +223,17 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>\.\b(age|all|app|component|contactmap|create|disp|extra|facetlist|facet|find|global|gravity|keys|live|local|near|normal|num|pointer|porosity|pos|radius|real|shear|string|timestep|unbal|value|velocity|vel|vertex|x|xx|xy|xz|y|yy|yz|z|zz)\b(\.|\(|\W)</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>end of FISH functions</string>
+			<string>\.\b(age|all|app|component|contactmap|create|disp|extra|facetlist|facet|find|global|gravity|group|keys|live|local|near|normal|num|pointer|porosity|pos|radius|real|shear|string|timestep|unbal|value|velocity|vel|vertex|x|xx|xy|xz|y|yy|yz|z|zz)\b(\.|\(|\W)</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b\s*(false|float|gravity|grav|int|map|memory|null|string|table|true|vector)\b</string>
+			<string>\b(false|float|gravity|grav|int|map|memory|not|null|or|string|table|true|vector)\b</string>
 			<key>name</key>
 			<string>storage.type.function.p3dat</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>constructors</string>
 		</dict>
 	</array>
 	<key>scopeName</key>

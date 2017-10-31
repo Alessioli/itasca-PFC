@@ -3,13 +3,12 @@
 name: Itasca
 scopeName: source.p3dat
 fileTypes:
-- dat
 - p3dat
 - p2dat
 - f3dat
-- fis
 - f3fis
 - p3fis
+- f3prj
 - p3prj
 - p2prj
 uuid: a4358a63-d396-4e0c-9b3d-f0de59021e43
@@ -19,9 +18,17 @@ patterns:
   name: constant.numeric.float.p3dat
 - match: \b(?i:(\d+e[\-\+]?\d+))
   name: constant.numeric.float.p3dat
+- match: ((\'|\")[a-zA-Z,0-9,_,=,\s,\.,\,,\;,\:,\+,\-,\*,\%,\@,\/,\\,\(,\),\[,\],\{,\}]*(\'|\"))
+  name: string.language.p3dat
+- match: \s*(=|\*|\+|\^|\-|\/|\#|\,|\&|\.\.\.|\|)\s*
+  name: keyword.operator.p3dat
+- match: ((;)(?!\{).*$\n?)
+  name: comment.language.p3dat
+- match: \s*(<|=<|>|>=|#)\s*
+  name: keyword.operator.comparison.p3dat
 - match: \b([1-9]+[0-9]*|0)
   name: constant.numeric.integer.decimal.p3dat
-- match: (define|def|fish define)\s*([\w+_]+)\s*\(?([a-zA-Z0-9,_]*)\)?\s*$\n?
+- match: (define|def|fish define|fish def)\s*([\w+_]+)\s*\(?([a-zA-Z0-9,_,\s*]*)*\)?\s*$\n?
   captures:
     '1': {name: keyword.language.p3dat}
     '2': {name: storage.type.function.p3dat}
@@ -30,7 +37,7 @@ patterns:
   name: constant.language.p3dat
 - match: \b(range|calm)\b\s+
   name: constant.language.p3dat
-- match: ^\s*\b(ball|brick|configure|cmat|contact|domain|fish|fix|geometry|his|history|ini|initial|measure|mea|model|program|structure|table|wall|zone)\b\s+(\b(add|apply|assemble|attribute|attr|cmodel|call|condition|configure|create|creep|cycle|default|delete|distribute|export|extent|extra|face|fix|free|generate|gravity|gridpoint|group|groupbehavior|history|import|initialize|interface|interval|link|list|make|new|pile|prop|property|relax|restore|result|save|solve|title|tolerance|tol|trace)\b\s*)*(\b(and|assign|attach|contact|create|fix|group|or|property|skin)\b\s*)*
+- match: ^\s*\b(ball|brick|configure|cmat|contact|data|domain|fish|fix|geometry|his|history|ini|initial|measure|mea|model|program|structure|table|wall|zone)\b\s+(\b(add|apply|assemble|attribute|attr|cmodel|call|condition|configure|create|creep|cycle|default|delete|distribute|export|extent|extra|face|fix|free|generate|gravity|gridpoint|groupbehavior|history|import|initialize|interface|interval|link|list|make|new|pile|prop|property|relax|restore|result|save|scalar|solve|title|tolerance|tol|trace)\b\s*)*(\b(and|assign|attach|contact|create|fix|group|or|property|skin|value)\b\s*)*
   captures:
     '1': {name: constant.language.p3dat}
     '3': {name: constant.language.p3dat}
@@ -45,16 +52,6 @@ patterns:
   name: variable.parameter.type.p3dat
 - match: ^\s*\b(command|end_command|endcommand|continue|end|exit section|exit|if|else if|else|end_if|endif|loop while|loop for|loop foreach|loop|end_loop|endloop|section|end_section|endsection|whilestepping)\b
   name: keyword.language.p3dat
-- match: \s*&\s*$\n?
-  name: keyword.language.p3dat
-- match: \s*(=|\*|\+|\^|\-|\/|\#|\,|\&|\.\.\.)\s*
-  name: keyword.operator.p3dat
-- match: ((;)(?!\{).*$\n?)
-  name: comment.language.p3dat
-- match: \s*(<|=<|>|>=|#)\s*
-  name: keyword.operator.comparison.p3dat
-- match: ((\'|\")[a-zA-Z,0-9,_,=,\s,\.,\,/,\-,\%,\;,\@,\(,\,+,\[,\])]*(\'|\"))
-  name: string.language.p3dat
 - match: (\[|\])
   name: storage.type.function.p3dat
 - match: (\@\w+)\(?\s*([a-zA-Z, _, \s]*)\s*\)?\s*
@@ -62,18 +59,18 @@ patterns:
     '1': {name: storage.type.function.p3dat}
     '2': {name: variable.parameter.function.p3dat}
 - comment: FISH functions
-- match: \b(math)\b\.\b(abs|acos|and|asin|atan|atan2|cos|degrad|exp|grand|ln|log|dot|gauss|mag|mag2|max|min|not|or|pi|round|sgn|sin|sqrt|tan|union|unit|)\b
-  captures:
-    '1': {name: entity.name.function.p3dat}
-    '2': {name: entity.name.function.p3dat}
-- match: \b(array|ball|ba|comp|contact|creep|file|global|gp|io|map|mech|measure|memory|struct|table|time|string|wall|zone)\b\.\b(active|add|age|build|close|contactmap|create|damp|delete|disp|end1|end2|end2|extra|facetlist|facet|find|fix|force|gap|gravity|group|head|id|interface|isprop|keys|link|list|load|mass|model|near|next|node|normal|num|open|out|persist|pile|porosity|pos_x|pos_y|prop|pos_z|pos|pp|radius|real|remove|out|set_damp|shear|size|strain|stress|timestep|to|type|unbal|value|velocity|vel|vertex|vertexlist|vol|write|x|y|z)\b(\.)*(\b(area|delete|disp|force|head|id|length|link|near|next|pos|update|vel|x|y|z)\b)*
+- match: \b(ball|ba|comp|contact|creep|global|gp|interface|mech|measure|struct|wall|zone)\b\.\b(active|add|age|contactmap|create|damp|delete|disp|end1|end2|end2|extra|facetlist|face|facet|find|fix|force|gap|gravity|group|head|id|interface|isprop|link|list|load|mass|model|near|next|node|normal|num|open|out|persist|pile|porosity|pos_x|pos_y|prop|pos_z|pos|pp|radius|real|remove|out|set_damp|shear|strain|stress|time|timestep|to|type|unbal|upper|velocity|vel|vertex|vertexlist|vol|write|x|y|z)\b(\.|\(|\W)*(\b(area|delete|disp|extra|force|gp|group|head|id|length|link|near|next|penetration|pos|total|update|vel|x|y|z)\b)*
   captures:
     '1': {name: entity.name.function.p3dat}
     '2': {name: entity.name.function.p3dat}
     '4': {name: entity.name.function.p3dat}
-- match: \.\b(age|all|app|component|contactmap|create|disp|extra|facetlist|facet|find|global|gravity|keys|live|local|near|normal|num|pointer|porosity|pos|radius|real|shear|string|timestep|unbal|value|velocity|vel|vertex|x|xx|xy|xz|y|yy|yz|z|zz)\b(\.|\(|\W)
+- match: \b(array|file|io|map|math|memory|table|time|string)\b\.\b(abs|acos|and|asin|atan|atan2|build|close|cos|create|degrad|delete|dot|exp|gauss|grand|keys|ln|log|mag|mag2|max|min|next|not|open|or|out|pi|real|remove|round|sgn|sin|size|sqrt|sub|tan|time|to|type|union|unit|value|write)\b
   captures:
     '1': {name: entity.name.function.p3dat}
-- comment: end of FISH functions
-- match: \b\s*(false|float|gravity|grav|int|map|memory|null|string|table|true|vector)\b
+    '2': {name: entity.name.function.p3dat}
+- match: \.\b(age|all|app|component|contactmap|create|disp|extra|facetlist|facet|find|global|gravity|group|keys|live|local|near|normal|num|pointer|porosity|pos|radius|real|shear|string|timestep|unbal|value|velocity|vel|vertex|x|xx|xy|xz|y|yy|yz|z|zz)\b(\.|\(|\W)
+  captures:
+    '1': {name: entity.name.function.p3dat}
+- match: \b(false|float|gravity|grav|int|map|memory|not|null|or|string|table|true|vector)\b
   name: storage.type.function.p3dat
+- comment: constructors
