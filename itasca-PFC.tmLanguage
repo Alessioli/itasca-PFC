@@ -86,7 +86,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>^\s*\b(call|clean|cy|cyc|cycle|list|load|new|pause|plot|res|restore|rest|ret|return|save|sav|set|solve|step|title)\b</string>
+			<string>^\s*\b(call|clean|cy|cyc|cycle|list|load|new|pause|res|restore|rest|ret|return|save|sav|set|solve|step|title)\b</string>
 			<key>name</key>
 			<string>constant.language.p3dat</string>
 		</dict>
@@ -120,7 +120,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>^\s*\b(ball|brick|clump|configure|cmat|contact|data|domain|fish|fix|fragment|geometry|his|history|ini|initial|measure|mea|model|program|structure|table|wall|zone)\b\s+(\b(activate|add|apply|assemble|attribute|attr|cable|call|cmodel|condition|configure|create|creep|cycle|default|delete|distribute|export|extent|extra|face|fix|free|generate|gravity|gridpoint|groupbehavior|history|import|initialize|interface|interval|link|list|make|new|pile|prop|property|register|relax|restore|result|save|scalar|servo|solve|title|tolerance|tol|trace)\b\s*)*(\b(and|assign|attach|contact|create|fix|group|or|property|skin|value)\b\s*)*</string>
+			<string>^\s*\b(ball|brick|clump|configure|cmat|contact|data|domain|fish|fix|fragment|geometry|his|history|ini|initial|measure|mea|model|plot|program|structure|table|wall|zone)\b\s+(\b(activate|add|apply|assemble|attribute|attr|cable|call|callback|cmodel|condition|configure|create|creep|cycle|default|delete|distribute|dynamic|export|extent|extra|face|fix|free|generate|gravity|gridpoint|groupbehavior|history|import|initialize|interface|interval|item|link|list|make|mechanical|new|pile|prop|property|register|relax|restore|result|save|scalar|servo|solve|title|tolerance|tol|trace)\b\s*)*(\b(and|assign|attach|contact|create|fix|group|or|property|skin|value)\b\s*)*</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -144,7 +144,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\s*\b(activate|add|addattribute|age|aratio|all|auto|axis|base|bin|box|callback|calm|cap|center|circle|clear|component-id|condition|cylinder|damp|default|deformability|destroy|displacement|dp_mode|dp_nratio|dp_sratio|emod|end1|end-1|end2|end-2|extent|extra|facet|fish|fishhalt|global|groups|group|height|id|kratio|lin_mode|linear|linearcbond|linearpbond|local|mechanical|mratio|method|model|mult|name|node|nstep|numbin|numbins|onewall|periodic|plane|plugin|polygon|point|porosity|position|pos-x|pos-y|pos-z|positions|prop|property|random|radius|ratio|reflect|remove|resolution|rgap|rotation|rotation-x|rotation-y|rotation-z|rr_fric|rrlinear|set|size|slot|solve|spin|stiffness-normal|stiffness-shear|stiffness|suppress|target|timestep|time|type|unbal|vel|velocity|velocity-x|velocity-y|velocity-z|vtol|x-rotation|xspin|xvelocity|xvel|volumefraction|y-rotation|yspin|yvelocity|yvel|zdisp|z-rotation|zspin|zvelocity|zvel)\b\s+</string>
+			<string>\s*\b(activate|add|addattribute|age|aratio|all|auto|axis|base|bin|box|callback|calm|cap|center|circle|clear|component-id|condition|cylinder|damp|default|deformability|destroy|displacement|dp_mode|dp_nratio|dp_sratio|emod|end1|end-1|end2|end-2|extent|extra|facet|fish|fish-halt|fishhalt|global|groups|group|height|id|kratio|lin_mode|linear|linearcbond|linearpbond|local|mechanical|mratio|method|model|mult|name|node|nstep|numbin|numbins|onewall|periodic|plane|plugin|polygon|point|porosity|position|pos-x|pos-y|pos-z|positions|prop|property|random|radius|ratio|reflect|remove|resolution|rgap|rotation|rotation-x|rotation-y|rotation-z|rr_fric|rrlinear|set|size|slot|solve|spin|stiffness-normal|stiffness-shear|stiffness|suppress|target|timestep|time|type|unbal|vel|velocity|velocity-x|velocity-y|velocity-z|vtol|x-rotation|xspin|xvelocity|xvel|volumefraction|y-rotation|yspin|yvelocity|yvel|zdisp|z-rotation|zspin|zvelocity|zvel)\b\s+</string>
 			<key>name</key>
 			<string>variable.parameter.type.p3dat</string>
 		</dict>
@@ -201,7 +201,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>\b(ball|ba|clump|comp|contact|creep|dfn|fragment|global|geom|gp|interface|mech|measure|struct|system|wall|zone)\b\.\b(active|add|addfracture|age|cable|contactmap|create|damp|delete|disp|end1|end2|end2|error|extra|facetlist|face|facet|find|fix|force|fracture|gap|gravity|group|head|id|interface|isprop|link|list|load|mass|model|near|next|node|normal|num|open|out|pebble|persist|pile|poly|porosity|pos_x|pos_y|prop|pos_z|pos|pp|radius|real|remove|set|set_damp|shear|strain|stress|time|timestep|to|type|unbal|upper|velocity|vel|vertex|vertexlist|vol|write|x|y|z)\b(\.|\(|\W)*(\b(area|delete|disp|extra|find|force|gp|group|head|id|length|link|list|near|next|penetration|normal|pos|prop|radius|total|update|vel|x|y|z)\b)*</string>
+			<string>\b(ball|ba|clump|comp|contact|creep|dfn|dynamic|fragment|global|geom|gp|interface|mech|measure|struct|system|wall|zone)\b\.\b(active|add|addfracture|age|cable|contactmap|create|damp|delete|density|disp|end1|end2|end2|error|extra|facetlist|face|facet|find|fix|force|fracture|gap|gravity|group|head|id|interface|isprop|link|list|load|mass|model|near|next|node|normal|num|open|out|pebble|persist|pile|poly|porosity|pos_x|pos_y|prop|pos_z|pos|pp|radius|real|remove|set|set_damp|shear|solve|step|strain|stress|time|timestep|to|type|unbal|upper|velocity|vel|vertex|vertexlist|vol|write|x|y|z)\b(\.|\(|\W)*(\b(area|delete|disp|extra|find|force|gp|group|head|id|length|link|list|near|next|penetration|normal|pos|prop|radius|total|unbal|update|vel|x|y|z)\b)*</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -218,7 +218,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>\b(array|data|file|global|io|map|math|memory|string|table|time|util)\b\.\b(abs|acos|add|and|asin|atan|atan2|build|clear|close|command|cos|create|degrad|delete|dim|dot|exp|error|gauss|grand|has|keys|ln|log|mag|mag2|max|min|next|not|open|or|out|pi|read|real|remove|round|scalar|sgn|sin|size|sqrt|sub|tan|time|to|token|type|union|unit|value|write|x|y|z)\b</string>
+			<string>\b(array|data|file|global|io|map|math|memory|string|table|time|util)\b\.\b(abs|acos|add|and|asin|atan|atan2|build|clear|close|command|cos|create|degrad|delete|dim|dot|exp|error|gauss|get|grand|has|keys|len|ln|log|mag|mag2|max|min|next|not|open|or|out|pi|read|real|remove|round|scalar|sgn|sin|size|sqrt|sub|tan|time|to|token|type|union|unit|value|write|x|y|z)\b</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -234,7 +234,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(false|float|gravity|grav|int|map|memory|not|null|or|string|table|true|type|vector)\b</string>
+			<string>\b(array|false|float|gravity|grav|int|map|memory|not|null|or|string|table|true|type|vector)\b</string>
 			<key>name</key>
 			<string>storage.type.function.p3dat</string>
 		</dict>
