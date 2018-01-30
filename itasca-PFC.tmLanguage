@@ -82,7 +82,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(define|def|fish define|fish def)\s*([\w+_]+)\s*\(?([a-zA-Z0-9,_,\s*]*)*\)?\s*$\n?</string>
+			<string>(define|def|fish define|fish def)\s*([\w+_]+)(\([a-zA-Z0-9,_,\s*]*\))*?\s*$\n?</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -120,7 +120,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>^\s*\b(ball|brick|clump|configure|cmat|contact|data|domain|fish|fix|fragment|geometry|his|history|ini|initial|measure|mea|model|plot|program|structure|table|wall|zone)\b\s+(\b(activate|add|apply|assemble|attribute|attr|cable|call|callback|cmodel|condition|configure|create|creep|cycle|default|delete|distribute|dynamic|export|extent|extra|face|fix|free|generate|gravity|gridpoint|groupbehavior|history|import|initialize|interface|interval|item|link|list|make|mechanical|new|pile|prop|property|register|relax|restore|result|save|scalar|servo|solve|title|tolerance|tol|trace)\b\s*)*(\b(and|assign|attach|contact|create|fix|group|or|property|skin|value)\b\s*)*</string>
+			<string>^\s*\b(ball|brick|building-blocks|clump|configure|cmat|contact|data|domain|fish|fix|fragment|geometry|his|history|ini|initial|measure|mea|model|plot|program|structure|table|wall|zone)\b\s+(\b(activate|add|apply|assemble|attribute|attr|block|cable|call|callback|cmodel|condition|configure|create|creep|cycle|default|delete|distribute|dynamic|edge|export|extent|extra|face|fix|free|generate|gravity|gridpoint|groupbehavior|history|import|initialize|interface|interval|item|link|list|make|mechanical|new|pile|prop|property|register|relax|restore|result|save|scalar|servo|solve|title|tolerance|tol|trace)\b\s*)*(\b(and|assign|attach|contact|create|fix|friction|group|or|property|skin|value)\b\s*)*</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -201,7 +201,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>\b(ball|ba|clump|comp|contact|creep|dfn|dynamic|fragment|global|geom|gp|interface|mech|measure|struct|system|wall|zone)\b\.\b(active|add|addfracture|age|cable|contactmap|create|damp|delete|density|disp|end1|end2|end2|error|extra|facetlist|face|facet|find|fix|force|fracture|gap|gravity|group|head|id|interface|isprop|link|list|load|mass|model|near|next|node|normal|num|open|out|pebble|persist|pile|poly|porosity|pos_x|pos_y|prop|pos_z|pos|pp|radius|real|remove|set|set_damp|shear|solve|step|strain|stress|time|timestep|to|type|unbal|upper|velocity|vel|vertex|vertexlist|vol|write|x|y|z)\b(\.|\(|\W)*(\b(area|delete|disp|extra|find|force|gp|group|head|id|length|link|list|near|next|penetration|normal|pos|prop|radius|total|unbal|update|vel|x|y|z)\b)*</string>
+			<string>\b(ball|clump|comp|contact|creep|dfn|dynamic|fragment|global|geom|gp|interface|mech|measure|struct|system|type|wall|zone)\b\.\b(active|add|addfracture|age|cable|contactmap|create|damp|delete|density|disp|end1|end2|end2|error|extra|facetlist|face|facet|find|fix|force|fracture|gap|gravity|group|head|id|interface|isprop|link|list|load|mass|model|near|next|node|normal|num|open|out|pebble|persist|pile|pointer|poly|porosity|pos_x|pos_y|prop|pos_z|pos|pp|radius|real|remove|set|set_damp|shear|solve|step|strain|stress|time|timestep|to|type|typeid|unbal|upper|velocity|vel|vertex|vertexlist|vol|write|x|y|z)\b(\.|\(|\W)*(\b(area|deformed|delete|disp|extra|find|force|gp|group|head|id|length|link|list|near|next|penetration|normal|pos|prop|radius|total|unbal|update|vel|x|xx|y|yy|z|zz)\b)*</string>
 		</dict>
 		<dict>
 			<key>captures</key>
