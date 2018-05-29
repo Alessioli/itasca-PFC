@@ -34,6 +34,12 @@
 		</dict>
 		<dict>
 			<key>match</key>
+			<string>\b([1-9]+[0-9]*|0)</string>
+			<key>name</key>
+			<string>constant.numeric.integer.decimal.p3dat</string>
+		</dict>
+		<dict>
+			<key>match</key>
 			<string>((\'|\")[a-zA-Z,0-9,_,=,\s,\.,\,,\;,\:,\+,\-,\*,\%,\@,\/,\\,\(,\),\[,\],\{,\},\#]*(\'|\"))</string>
 			<key>name</key>
 			<string>string.language.p3dat</string>
@@ -57,10 +63,8 @@
 			<string>keyword.operator.comparison.p3dat</string>
 		</dict>
 		<dict>
-			<key>match</key>
-			<string>\b([1-9]+[0-9]*|0)</string>
-			<key>name</key>
-			<string>constant.numeric.integer.decimal.p3dat</string>
+			<key>comment</key>
+			<string>fish function definition</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -82,11 +86,11 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(define|def|fish define|fish def)\s*([\w+_]+)(\([a-zA-Z0-9,_,\s*]*\))*?\s*$\n?</string>
+			<string>^(define|def|fish define|fish def)\s*([\w+_]+)\(?([a-zA-Z0-9\_,\s*]*)*\)?</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>^\s*\b(call|clean|cy|cyc|cycle|list|load|new|pause|res|restore|rest|ret|return|save|sav|set|solve|step|title)\b</string>
+			<string>^\s*\b(call|clean|construct|cy|cyc|cycle|list|load|new|pause|res|restore|rest|ret|return|save|sav|set|solve|step|struct|title)\b\s+</string>
 			<key>name</key>
 			<string>constant.language.p3dat</string>
 		</dict>
@@ -120,7 +124,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>^\s*\b(ball|brick|building-blocks|clump|configure|cmat|contact|data|domain|fish|fix|fragment|geometry|his|history|ini|initial|measure|mea|model|plot|program|structure|table|wall|zone)\b\s+(\b(activate|add|apply|assemble|attribute|attr|block|cable|call|callback|cmodel|condition|configure|create|creep|cycle|default|delete|distribute|dynamic|edge|export|extent|extra|face|fix|free|generate|gravity|gridpoint|groupbehavior|history|import|initialize|interface|interval|item|link|list|make|mechanical|new|pile|prop|property|register|relax|restore|result|save|scalar|servo|solve|title|tolerance|tol|trace)\b\s*)*(\b(and|assign|attach|contact|create|fix|friction|group|or|property|skin|value)\b\s*)*</string>
+			<string>^\s*\b(ball|brick|building-blocks|clump|configure|cmat|contact|data|domain|fish|fix|fragment|geometry|his|history|ini|initial|local|measure|mea|model|plot|program|structure|table|wall|zone)\b\s+(\b(activate|add|apply|assemble|attribute|attr|block|cable|call|callback|cmodel|condition|configure|create|creep|cycle|default|delete|distribute|dynamic|edge|export|extent|extra|face|fix|free|generate|gravity|gridpoint|groupbehavior|history|import|initialize-stresses|initialize|interface|interval|item|link|list|make|mechanical|new|pile|prop|property|register|relax|restore|result|save|scalar|servo|solve|tolerance|tol|trace)\b\s*)*(\b(and|assign|attach|contact|create|fix|friction|group|or|property|skin|value)\b\s*)*</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -134,7 +138,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\s*\b(bulk|bulk-maximum|coh|cohesion|dens|density|dil|dila|dilation|fric|multiplier|pois|poisson|pressure-cap|shear|table-pressure-cap|ten|tens|tension|young)\b\s+</string>
+			<string>\s*\b(bulk|bulk-maximum|coh|cohesion|dens|density|dil|dila|dilation|fric|multiplier|on-nodeid|pois|poisson|pressure-cap|shear|shear-maximum|table-pressure-cap|ten|tens|tension|young)\b\s+</string>
 			<key>name</key>
 			<string>variable.parameter.type.p3dat</string>
 		</dict>
@@ -144,7 +148,17 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\s*\b(activate|add|addattribute|age|aratio|all|auto|axis|base|bin|box|callback|calm|cap|center|circle|clear|component-id|condition|cylinder|damp|default|deformability|destroy|displacement|dp_mode|dp_nratio|dp_sratio|emod|end1|end-1|end2|end-2|extent|extra|facet|fish|fish-halt|fishhalt|global|groups|group|height|id|kratio|lin_mode|linear|linearcbond|linearpbond|local|mechanical|mratio|method|model|mult|name|node|nstep|numbin|numbins|onewall|periodic|plane|plugin|polygon|point|porosity|position|pos-x|pos-y|pos-z|positions|prop|property|random|radius|ratio|reflect|remove|resolution|rgap|rotation|rotation-x|rotation-y|rotation-z|rr_fric|rrlinear|set|size|slot|solve|spin|stiffness-normal|stiffness-shear|stiffness|suppress|target|timestep|time|type|unbal|vel|velocity|velocity-x|velocity-y|velocity-z|vtol|x-rotation|xspin|xvelocity|xvel|volumefraction|y-rotation|yspin|yvelocity|yvel|zdisp|z-rotation|zspin|zvelocity|zvel)\b\s+</string>
+			<string>\s*\b(activate|add|addattribute|age|aratio|all|auto|axis|base|bin|box|callback|calm|cap|center|circle|clear|component-id|condition|cylinder|damp|default|deformability|destroy|displacement|dp_mode|dp_nratio|dp_sratio|emod|end1|end-1|end2|end-2|extent|extra|facet|fish|fish-halt|fishhalt|friction|global|groups|group|height|id|kratio|lin_mode|linear|linearcbond|linearpbond|local|mechanical|mratio|method|model|mult|name|named-range|node|nstep|numbin|numbins|onewall|periodic|plane|plugin|polygon|point|porosity|position|pos-x|pos-y|pos-z|positions|prop|property|random|range-target|radius|ratio|reflect|remove|resolution|rgap|rotation|rotation-x|rotation-y|rotation-z|rr_fric|rrlinear|set|size|slot|solve|spin|stiffness|suppress|target|timestep|time|type|unbal|vel|velocity|velocity-x|velocity-y|velocity-z|vtol|x-rotation|xspin|xvelocity|xvel|volumefraction|y-rotation|yspin|yvelocity|yvel|zdisp|z-rotation|zspin|zvelocity|zvel)\b\s+</string>
+			<key>name</key>
+			<string>variable.parameter.type.p3dat</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>structural element properties</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\s*\b(coupling-cohesion-normal|coupling-cohesion-shear|coupling-friction-normal|coupling-friction-shear|coupling-stiffness-normal|coupling-stiffness-shear|cross-sectional-area|direction-y|moi-polar|moi-y|moi-z|perimeter|plastic-moment)\b\s+</string>
 			<key>name</key>
 			<string>variable.parameter.type.p3dat</string>
 		</dict>
@@ -161,6 +175,10 @@
 			<string>storage.type.function.p3dat</string>
 		</dict>
 		<dict>
+			<key>comment</key>
+			<string>fish function execution in commandline</string>
+		</dict>
+		<dict>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -175,7 +193,13 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(\@\w+)\(?\s*([a-zA-Z, _, \s]*)\s*\)?\s*</string>
+			<string>(\@\w+)\(\s*([a-zA-Z, _, \s]*)\s*\)\s*</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(\@\w+)\s*</string>
+			<key>name</key>
+			<string>storage.type.function.p3dat</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -201,7 +225,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>\b(ball|clump|comp|contact|creep|dfn|dynamic|fragment|global|geom|gp|interface|mech|measure|struct|system|type|wall|zone)\b\.\b(active|add|addfracture|age|cable|contactmap|create|damp|delete|density|disp|end1|end2|end2|error|extra|facetlist|face|facet|find|fix|force|fracture|gap|gravity|group|head|id|interface|isprop|link|list|load|mass|model|near|next|node|normal|num|open|out|pebble|persist|pile|pointer|poly|porosity|pos_x|pos_y|prop|pos_z|pos|pp|radius|real|remove|set|set_damp|shear|solve|step|strain|stress|time|timestep|to|type|typeid|unbal|upper|velocity|vel|vertex|vertexlist|vol|write|x|y|z)\b(\.|\(|\W)*(\b(area|deformed|delete|disp|extra|find|force|gp|group|head|id|length|link|list|near|next|penetration|normal|pos|prop|radius|total|unbal|update|vel|x|xx|y|yy|z|zz)\b)*</string>
+			<string>\b(ball|clump|comp|contact|creep|dfn|dynamic|fragment|global|geom|gp|interface|mech|measure|struct|type|wall|zone)\b\.\b(active|add|addfracture|age|cable|code|contactmap|create|damp|delete|density|disp|end1|end2|end2|error|extra|facetlist|face|facet|find|fix|force|fracture|gap|gravity|group|head|id|interface|isgroup|isprop|link|list|load|mass|model|near|next|node|normal|num|open|out|pebble|persist|pile|pointer|poly|porosity|pos_x|pos_y|prop|pos_z|pos|pp|radius|real|remove|set|set_damp|shear|solve|step|strain|stress|time|timestep|to|type|typeid|unbal|upper|velocity|vel|vertex|vertexlist|vol|write|x|y|z)\b(\.|\(|\W)*(\b(all|area|deformed|delete|disp|extra|find|force|gp|group|head|id|length|link|list|near|next|penetration|normal|pos|prop|radius|total|unbal|update|vel|x|xx|y|yy|z|zz)\b)*</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -218,7 +242,38 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>\b(array|data|file|global|io|map|math|memory|string|table|time|util)\b\.\b(abs|acos|add|and|asin|atan|atan2|build|clear|close|command|cos|create|degrad|delete|dim|dot|exp|error|gauss|get|grand|has|keys|len|ln|log|mag|mag2|max|min|next|not|open|or|out|pi|read|real|remove|round|scalar|sgn|sin|size|sqrt|sub|tan|time|to|token|type|union|unit|value|write|x|y|z)\b</string>
+			<string>\b(array|data|file|global|io|map|memory|string|system|table|time|util)\b\.\b(add|and|build|char|clear|close|command|create|delete|dim|error|get|grand|has|keys|len|lower|next|not|open|or|out|read|real|remove|scalar|size|sub|time|to|token|type|union|upper|value|vector|write|x|y|z)\b</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Math functions</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.p3dat</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.p3dat</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.p3dat</string>
+				</dict>
+				<key>6</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.p3dat</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>\b(math|matrix)\b\.\b(aangle|abs|acos|and|asin|atan|atan2|ceiling|closest|closest|cos|cosh|cross|ddir|degrad|dip|dist|dist|dist|dot|euler|exp|floor|ln|log|lshift|mag|mag2|max|min|normal|normal|not|or|outer|pi|random|random|round|rshift|sgn|sin|sinh|sqrt|tan|tanh|unit)\b(\.|\(|\W)*(\b(to|segment|triangle|from|from|segment|segment|triangle|to|from|from|product|gauss|uniform)\b)*\b(\.|\(|\W)*(\b(euler|point|point|normal|normal|point|segment|segment|aangle|dip|dip.ddir)\b)*</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -234,7 +289,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(array|false|float|gravity|grav|int|map|memory|not|null|or|string|table|true|type|vector)\b</string>
+			<string>\b(array|boolean|false|float|gravity|grav|int|map|memory|not|null|off|on|or|string|table|true|type|vector)\b</string>
 			<key>name</key>
 			<string>storage.type.function.p3dat</string>
 		</dict>
